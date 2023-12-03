@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
+</head>
+<body>
+    <div class="container">
+    <div class="title">
+        <h1>questions</h1>
+    </div>
+    <div class="questions">
+        <form id="questionform" method="post">
+            <ol>
+                <li>
+                    <label for="qst1">What country has the highest life expectancy?</label><br>
+                    <input type="text" name="qst1" placeholder="answer here ...">
+                </li>
+
+                <li>
+                    <label for="qst2">Where would you be if you were standing on the Spanish Steps?</label> <br>
+                    <input type="text" name="qst2" placeholder="answer here ...">
+                </li>
+
+                <li>
+                    <label for="qst3">Which language has the more native speakers: English or Spanish?</label> <br>
+                    <input type="text" name="qst3" placeholder="answer here ...">
+                </li>
+
+                <li>
+                    <label for="qst4">What is the most common surname in the United States?</label> <br>
+                    <input type="text" name="qst4" placeholder="answer here ...">
+                </li>
+
+                <li>
+                    <label for="qst5">How many minutes are in a full week? </label> <br>
+                    <input type="text" name="qst5" placeholder="answer here ...">
+                </li>
+            </ol>
+            <label class="resultcheck" for="">Do You want to see the result: </label><br>
+            <input class="resultcheck" type="submit" value="GO ..." formaction="/result" >
+            
+        </form>
+    </div>
+    <div class="result">
+        <% if(locals.rsp1){ %>
+            
+            <% if(rsp1 === "Hong Kong" || rsp1 === "hong kong"){ %>
+                <p class="resultbackground">Question one is True ✔️ </p>
+            <% }else{ %>
+                <p class="resultbackground">Your answer <%= rsp1 %> is False ❌, the True answer is Hong Kong </p>
+            <% } %>    
+
+        <% }else {  %>
+            <p class="invisible">You didn't answer question One</p>
+        <% } %>
+
+        <% if(locals.rsp2){ %>
+            
+            <% if(rsp2 === "Rome" || rsp2 === "rome"){ %>
+                <p class="resultbackground">Question Two is True ✔️ </p>
+            <% }else{ %>
+                <p class="resultbackground">Your answer <%= rsp2 %> is False ❌, the True answer is Rome </p>
+            <% } %>    
+
+        <% }else {  %>
+            <p class="invisible">You didn't answer question Two</p>
+        <% } %>
+
+        <% if(locals.rsp3){ %>
+            
+            <% if(rsp3 === "Spanish" || rsp3 === "spanish"){ %>
+                <p class="resultbackground">Question Three is True ✔️ </p>
+            <% }else{ %>
+                <p class="resultbackground">Your answer <%= rsp3 %> is False ❌, the True answer is Spanish </p>
+            <% } %>    
+
+        <% }else {  %>
+            <p class="invisible">You didn't answer question Three</p>
+        <% } %>
+
+        <% if(locals.rsp4){ %>
+            
+            <% if(rsp4 === "Smith" || rsp4 === "smith"){ %>
+                <p class="resultbackground">Question Four is True ✔️ </p>
+            <% }else{ %>
+                <p class="resultbackground">Your answer <%= rsp4 %> is False ❌, the True answer is Smith </p>
+            <% } %>    
+
+        <% }else {  %>
+            <p class="invisible">You didn't answer question Four</p>
+        <% } %>
+
+        <% if(locals.rsp5){ %>
+            
+            <% if(rsp5 === "1080"){ %>
+                <p class="resultbackground">Question Five is True ✔️ </p>
+            <% }else{ %>
+                <p class="resultbackground">Your answer <%= rsp5 %> is False ❌, the True answer is 1080 </p>
+            <% } %>    
+
+        <% }else {  %>
+            <p class="invisible">You didn't answer question Five</p>
+        <% } %>
+        
+       
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../index.js"></script>
+</body>
+</html>
